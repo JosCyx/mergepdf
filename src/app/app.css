@@ -1,8 +1,10 @@
 .pdf-merger {
-  max-width: 800px;
+  max-width: 950px;
   margin: 2rem auto;
   padding: 2rem;
   font-family: Arial, sans-serif;
+  border-radius: 20px;
+  background-color: #eeeeee;
 }
 
 .pdf-merger h1 {
@@ -67,16 +69,6 @@
   font-size: 1.1rem;
 }
 
-.order-info {
-  margin: 0 0 1rem 0;
-  padding: 0.5rem;
-  background: #e7f3ff;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  color: #0066cc;
-  border-left: 3px solid #0066cc;
-}
-
 .pdf-list {
   display: flex;
   flex-direction: column;
@@ -122,61 +114,6 @@
   gap: 0.25rem;
 }
 
-.order-btn {
-  background: #6c757d;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 0.9rem;
-  font-weight: bold;
-  transition: background-color 0.2s ease;
-}
-
-.order-btn:hover:not(:disabled) {
-  background: #545b62;
-}
-
-.order-btn:disabled {
-  background: #cccccc;
-  cursor: not-allowed;
-  opacity: 0.6;
-}
-
-.up-btn:hover:not(:disabled) {
-  background: #28a745;
-}
-
-.down-btn:hover:not(:disabled) {
-  background: #fd7e14;
-}
-
-.remove-btn {
-  background: #dc3545;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: bold;
-  transition: background-color 0.2s ease;
-  margin-left: 0.25rem;
-}
-
-.remove-btn:hover {
-  background: #c82333;
-}
-
 .total-info {
   padding: 0.75rem;
   background: #e7f3ff;
@@ -188,50 +125,10 @@
 /* Botones de acción */
 .action-buttons {
   display: flex;
+  justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
-}
-
-.merge-button, .clear-button {
-  padding: 1rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  flex: 1;
-  min-width: 200px;
-}
-
-.merge-button {
-  background-color: #007bff;
-  color: white;
-}
-
-.merge-button:hover:not(:disabled) {
-  background-color: #0056b3;
-}
-
-.merge-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-.clear-button {
-  background-color: #6c757d;
-  color: white;
-  flex: 0 0 auto;
-  min-width: 120px;
-}
-
-.clear-button:hover:not(:disabled) {
-  background-color: #545b62;
-}
-
-.clear-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+  max-width: 950px;
 }
 
 /* Responsive design */
@@ -243,10 +140,6 @@
   
   .action-buttons {
     flex-direction: column;
-  }
-  
-  .merge-button, .clear-button {
-    min-width: auto;
   }
   
   .pdf-item {
@@ -265,3 +158,29 @@
     width: 100%;
   }
 }
+
+.btn-up {
+  color: green;
+}
+
+.btn-up:disabled{
+  color: gray;
+}
+
+.btn-down {
+  color: orange;
+}
+
+.btn-down:disabled{
+  color: gray;
+}
+
+.btn-remove {
+  color: #ff0000;
+}
+
+/*.clear-all-btn{
+  color: rgb(255, 65, 65) !important;
+  border: .1px solid rgb(255, 65, 65) !important;
+}*/
+

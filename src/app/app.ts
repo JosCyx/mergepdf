@@ -1,9 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { PdfMerger, PdfInfo } from './pdf-merger';
+import {MatIconModule} from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [MatIconModule, MatButtonModule,MatCardModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

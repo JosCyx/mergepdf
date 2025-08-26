@@ -1,82 +1,56 @@
 <div class="pdf-merger">
   <h1>{{title()}}</h1>
-  
+
   <div class="file-inputs">
     <!-- Selección múltiple -->
     <div class="file-input-group">
       <label for="multipleFiles">Seleccionar archivos PDF:</label>
-      <input 
-        id="multipleFiles" 
-        type="file" 
-        accept=".pdf" 
-        multiple
-        (change)="onFilesSelected($event)" 
-        [disabled]="isProcessing()"
-      />
+      <input id="multipleFiles" type="file" accept=".pdf" multiple (change)="onFilesSelected($event)"
+        [disabled]="isProcessing()" />
       <small class="help-text">Mantén presionado Ctrl (o Cmd en Mac) para seleccionar múltiples archivos</small>
     </div>
   </div>
 
   <!-- Lista de PDFs seleccionados -->
   @if (selectedPdfs().length > 0) {
-    <div class="selected-pdfs">
-      <h3>PDFs seleccionados ({{selectedPdfs().length}}):</h3>
-      <p class="order-info">💡 Usa las flechas ↑↓ para cambiar el orden de los documentos</p>
-      <div class="pdf-list">
-        @for (pdf of selectedPdfs(); track pdf.name; let i = $index) {
-          <div class="pdf-item">
-            <div class="pdf-info">
-              <span class="pdf-name">{{i + 1}}. {{pdf.name}}</span>
-              <span class="pdf-pages">({{pdf.pageCount}} página{{pdf.pageCount !== 1 ? 's' : ''}})</span>
-            </div>
-            <div class="pdf-controls">
-              <button 
-                class="order-btn up-btn" 
-                (click)="movePdfUp(i)" 
-                [disabled]="i === 0"
-                title="Subir"
-              >
-                ↑
-              </button>
-              <button 
-                class="order-btn down-btn" 
-                (click)="movePdfDown(i)" 
-                [disabled]="i === selectedPdfs().length - 1"
-                title="Bajar"
-              >
-                ↓
-              </button>
-              <button class="remove-btn" (click)="removePdf(i)" title="Remover PDF">×</button>
-            </div>
-          </div>
-        }
+  <div class="selected-pdfs">
+    <h3>PDFs seleccionados ({{selectedPdfs().length}}):</h3>
+    <div class="pdf-list">
+      @for (pdf of selectedPdfs(); track pdf.name; let i = $index) {
+      <div class="pdf-item">
+        <div class="pdf-info">
+          <span class="pdf-name">{{i + 1}}. {{pdf.name}}</span>
+          <span class="pdf-pages">({{pdf.pageCount}} página{{pdf.pageCount !== 1 ? 's' : ''}})</span>
+        </div>
+        <div class="pdf-controls">
+          <button class="btn-up" matIconButton (click)="movePdfUp(i)" [disabled]="i === 0" title="Subir">
+            <mat-icon>arrow_upward</mat-icon>
+          </button>
+          <button class="btn-down" matIconButton (click)="movePdfDown(i)" [disabled]="i === selectedPdfs().length - 1" title="Bajar">
+            <mat-icon>arrow_downward</mat-icon>
+          </button>
+          <button class="btn-remove" matIconButton (click)="removePdf(i)"
+            title="Remover PDF"><mat-icon>close</mat-icon></button>
+        </div>
       </div>
-      <div class="total-info">
-        <strong>Total: {{getTotalPages()}} páginas en {{selectedPdfs().length}} archivo{{selectedPdfs().length !== 1 ? 's' : ''}}</strong>
-      </div>
+      }
     </div>
+    <div class="total-info">
+      <strong>Total: {{getTotalPages()}} páginas en {{selectedPdfs().length}} archivo{{selectedPdfs().length !== 1 ? 's'
+        : ''}}</strong>
+    </div>
+  </div>
   }
 
   <!-- Botones de acción -->
   <div class="action-buttons">
-    <button 
-      class="merge-button" 
-      (click)="mergePdfs()" 
-      [disabled]="selectedPdfs().length < 2 || isProcessing()"
-    >
-      {{isProcessing() ? 'Procesando...' : 
-        (selectedPdfs().length < 2 ? 'Selecciona al menos 2 PDFs' : 
-        'Combinar ' + selectedPdfs().length + ' PDFs (' + getTotalPages() + ' páginas)')}}
-    </button>
+    <button matButton="filled" (click)="mergePdfs()" [disabled]="selectedPdfs().length < 2 || isProcessing()">
+      {{isProcessing() ? 'Procesando...' :
+      (selectedPdfs().length < 2 ? 'Selecciona al menos 2 PDFs' : 'Combinar ' + selectedPdfs().length + ' PDFs' )}} </button>
 
-    <button 
-      class="clear-button" 
-      (click)="clearAllPdfs()" 
-      [disabled]="selectedPdfs().length === 0 || isProcessing()"
-    >
-      @if (selectedPdfs().length > 0) {
-        Limpiar todo
-      }
-    </button>
+        <button class="clear-all-btn" matButton="outlined" (click)="clearAllPdfs()"
+          [disabled]="selectedPdfs().length === 0 || isProcessing()">
+          Limpiar todo
+        </button>
   </div>
 </div>
