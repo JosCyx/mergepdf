@@ -1,0 +1,267 @@
+.pdf-merger {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.pdf-merger h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.file-inputs {
+  margin-bottom: 2rem;
+}
+
+.file-input-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.file-input-group label {
+  font-weight: bold;
+  color: #555;
+}
+
+.file-input-group input[type="file"] {
+  padding: 0.5rem;
+  border: 2px dashed #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.file-input-group input[type="file"]:hover:not(:disabled) {
+  border-color: #007bff;
+}
+
+.file-input-group input[type="file"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.help-text {
+  font-size: 0.8rem;
+  color: #888;
+  font-style: italic;
+}
+
+/* Lista de PDFs seleccionados */
+.selected-pdfs {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.selected-pdfs h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #495057;
+  font-size: 1.1rem;
+}
+
+.order-info {
+  margin: 0 0 1rem 0;
+  padding: 0.5rem;
+  background: #e7f3ff;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #0066cc;
+  border-left: 3px solid #0066cc;
+}
+
+.pdf-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.pdf-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+  transition: box-shadow 0.2s ease;
+}
+
+.pdf-item:hover {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.pdf-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex-grow: 1;
+}
+
+.pdf-name {
+  font-weight: 500;
+  color: #333;
+}
+
+.pdf-pages {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.pdf-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.order-btn {
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.order-btn:hover:not(:disabled) {
+  background: #545b62;
+}
+
+.order-btn:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.up-btn:hover:not(:disabled) {
+  background: #28a745;
+}
+
+.down-btn:hover:not(:disabled) {
+  background: #fd7e14;
+}
+
+.remove-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+  margin-left: 0.25rem;
+}
+
+.remove-btn:hover {
+  background: #c82333;
+}
+
+.total-info {
+  padding: 0.75rem;
+  background: #e7f3ff;
+  border-radius: 4px;
+  text-align: center;
+  color: #0066cc;
+}
+
+/* Botones de acción */
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.merge-button, .clear-button {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  flex: 1;
+  min-width: 200px;
+}
+
+.merge-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.merge-button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.merge-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.clear-button {
+  background-color: #6c757d;
+  color: white;
+  flex: 0 0 auto;
+  min-width: 120px;
+}
+
+.clear-button:hover:not(:disabled) {
+  background-color: #545b62;
+}
+
+.clear-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .pdf-merger {
+    margin: 1rem;
+    padding: 1rem;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .merge-button, .clear-button {
+    min-width: auto;
+  }
+  
+  .pdf-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .pdf-controls {
+    align-self: flex-end;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  .pdf-info {
+    width: 100%;
+  }
+}
