@@ -1,59 +1,10 @@
 # PdfMerge
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/7284d233-3297-484c-85a8-2326651c0c3e" />
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.1.
+PdfMerge es un proyecto personal, desarrollado sin fines de lucro, cuyo propósito es brindar una herramienta práctica y ligera para la fusión y a futuro la edición de archivos PDF. La motivación principal es ofrecer una alternativa simple y accesible para quienes necesitan combinar documentos sin depender de software complejo o servicios de pago.
 
-## Development server
+En su versión actual, la aplicación permite unir múltiples archivos PDF en un solo documento descargable de manera rápida y eficiente. Si bien se trata de un primer módulo, el proyecto tiene la intención de evolucionar con nuevas funcionalidades relacionadas con la manipulación de PDFs, como la división de documentos, reorganización de páginas, inserción de marcas de agua o protección con contraseña.
 
-To start a local development server, run:
+Para su desarrollo se empleó Angular 20 como framework principal de la interfaz, lo que garantiza una experiencia moderna y fluida en el navegador. El núcleo de la manipulación de documentos se implementó utilizando la librería <strong><a href="https://pdf-lib.js.org/">PDF-LIB</a></strong>, una herramienta de código abierto ampliamente utilizada para crear, modificar y trabajar con archivos PDF directamente en aplicaciones web.
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+El código fuente está completamente disponible en este repositorio, de modo que cualquier persona interesada puede revisarlo, estudiar su funcionamiento y proponer mejoras.
